@@ -44,6 +44,7 @@
                             // Poll div
                             var div = document.createElement("div");
                             div.classList.add('poll');
+                            div.id = i;
     
                             // div
                             var divTwo = document.createElement("div");
@@ -53,7 +54,7 @@
                             var a = document.createElement("h3");
                             a.classList.add("col");
                             a.classList.add("s12");
-                            a.classList.add('m6');
+                            a.classList.add('m4');
                             a.textContent = data[i].Title;
     
                             // h5 tag
@@ -66,7 +67,7 @@
                             // End Poll Btn
                             var end = document.createElement("button");
                             end.classList.add('col');
-                            end.classList.add('s4');
+                            end.classList.add('s6');
                             end.classList.add('m2');
                             end.classList.add('end');
                             end.id = i + "end";
@@ -75,7 +76,7 @@
                             // Vote Btn
                             var vote = document.createElement("button");
                             vote.classList.add('col');
-                            vote.classList.add('s4');
+                            vote.classList.add('s6');
                             vote.classList.add('m2');
                             vote.classList.add('vote');
                             vote.id = i + "vote";
@@ -84,16 +85,26 @@
                             // Results Btn 
                             var results = document.createElement("button");
                             results.classList.add("col");
-                            results.classList.add("s4");
+                            results.classList.add("s6");
                             results.classList.add("m2");
                             results.classList.add("results");
                             results.id = i + "results";
                             results.textContent = "Results"
+
+                            // Delete Btn
+                            var del = document.createElement("button");
+                            del.classList.add("col");
+                            del.classList.add('s6');
+                            del.classList.add("m2");
+                            del.classList.add("del");
+                            del.id = i + "del";
+                            del.textContent = "Delete";
     
                             divTwo.append(a);
                             divTwo.appendChild(vote);
                             divTwo.appendChild(results);
                             divTwo.appendChild(end);
+                            divTwo.appendChild(del);
     
                             // Append Data Elements
                             div.appendChild(divTwo);
@@ -152,6 +163,16 @@
         $(document.body).on('click', '.end', endPoll);
         $(document.body).on('click', '.vote', vote);
         $(document.body).on('click', '.results', results);
+        $(document.body).on('click', '.del', del);
+    }
+
+    function del(){
+        var id = $(this).attr('id');
+        id = id.split("del");
+        id = id[0];
+        
+        firebase.database().ref('Users/' + localStorage.getItem('uid') + '/Polls/' + id).remove();
+        $('#' + id).remove();
     }
 
     function results(){
@@ -230,7 +251,7 @@
             return;
         }
         
-        // Chekc if the public radio button is checked
+        // Check if the public radio button is checked
         if($('#public').prop('checked') === true){
             var status = "public";
         }else if($('#private').prop('checked') === true){
