@@ -1,0 +1,45 @@
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    height: 100%;
+    /* background: linear-gradient(to bottom, #BF30CC, #8F2499); */
+    background-color: #1E0136;
+    box-sizing: border-box;
+
+    /* variables */
+    --basColor: #1E0136;
+    --accentColorOne: #691B5A;
+}
+
+span{
+    text-align: left;
+    font-size: 40px !important;
+}
+
+label{
+    margin-bottom: 10px;
+    text-align: left !important;
+}
+
+h5{
+    color: white;
+    margin-top: 0px;
+}
+
+button{
+    background-color: var(--accentColorOne);
+    color: white;
+    border: none;
+}
+
+button:focus{
+    background-color: var(--accentColorOne);
+}
+
+button:active{
+    box-shadow: 0 2px 5px #5b5b5b5b;
+}
+
+.choices{
+    margin-top: 50px;
+}

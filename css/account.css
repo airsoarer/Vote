@@ -1,0 +1,48 @@
+body{
+    /* variables */
+    --basColor: #1E0136;
+    --accentColorOne: #691B5A;
+}
+
+button{
+    background-color: var(--accentColorOne);
+    color: white;
+    border: none;
+    font-size: 24px;
+}
+
+input{
+    color: white;
+}
+
+label{
+    font-size: 16px;
+}
+
+@media screen and (max-width: 600px){
+    #change{
+        margin-top: 50px;
+    }
+}
+
+.nav a{
+    height: 75%;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* .nav a:hover{
+    transition: .2s;
+    border-bottom: 5px white solid;
+} */
+
+.info button{
+    font-size: 18px;
+    margin-top: 5px
+}
+
+.modal{
+    background-color: var(--accentColorOne);
+    color: white;
+}

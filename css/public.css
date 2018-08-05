@@ -1,0 +1,33 @@
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    height: 100%;
+    /* background: linear-gradient(to bottom, #BF30CC, #8F2499); */
+    background-color: #1E0136;
+    box-sizing: border-box;
+
+    /* variables */
+    --basColor: #1E0136;
+    --accentColorOne: #691B5A;
+}
+
+h3{
+    color: black;
+}
+
+.info h5{
+    margin-top: 20px;
+    padding: 0px;
+}
+
+.info{
+    margin-bottom: -100px;
+}
+
+.polls{
+    margin-top: 50px;
+}
+
+.poll{
+    /* border-bottom: 5px solid var(--accentColorOne); */
+}

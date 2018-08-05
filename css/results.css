@@ -1,0 +1,52 @@
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    height: 100%;
+    /* background: linear-gradient(to bottom, #BF30CC, #8F2499); */
+    background-color: #1E0136;
+    box-sizing: border-box;
+
+    /* variables */
+    --basColor: #1E0136;
+    --accentColorOne: #691B5A;
+}
+
+hr{
+    height: 100%;
+    background-color: var(--accentColorOne);
+    color: white !important;
+    text-align: left;
+    font-size: 24px;
+    border: none;
+}
+
+h5{
+    color: white;
+    margin-top: 0px;
+}
+
+@media screen and (max-width: 600px){
+    hr{
+        font-size: 18px;
+    }
+}
+
+.goHome a{
+    background-color: var(--accentColorOne);
+    color: white; 
+    height: 100% !important;
+    font-size: 24px;
+}
+
+.bars div{
+    height: 120px;
+    margin-bottom: 25px;
+}
+
+.goHome{
+    height: 50px;
+}
+
+.bars{
+    margin-left: 10px;
+}

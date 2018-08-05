@@ -1,0 +1,173 @@
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    height: 100%;
+    /* background: linear-gradient(to bottom, #BF30CC, #8F2499); */
+    background-color: #1E0136;
+    box-sizing: border-box;
+
+    /* variables */
+    --basColor: #1E0136;
+    --accentColorOne: #691B5A;
+}
+
+h5{
+    color: black;
+    margin-top: -25px;
+    padding-bottom: 25px !important;
+}
+
+.card h3{
+    color: black;
+}
+
+a{
+    color: white;
+}
+
+.noneLogged{
+    margin-top: 20%;
+}
+
+.noneLogged a{
+    background-color: var(--accentColorOne);
+    color: white;
+    height: 50px;
+    font-size: 26px;
+}
+
+::-webkit-scrollbar{
+    height: 5px;
+    width: 5px;
+    /* width: 5px !important; */
+}
+
+::-webkit-scrollbar-track{ 
+    box-shadow: inset 0 5px 6px #FFFFFF;
+}
+
+::-webkit-scrollbar-thumb{
+    /* background-color: var(--baseColor); */
+    /* background-color: black; */
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 600px){
+    #logout{
+        margin-bottom: 50px;
+    }
+}
+
+label{
+    font-size: 18px;
+}
+
+img{
+    height: 75px;
+}
+
+button{
+    height: 75px;
+    font-size: 24px;
+}
+
+input{
+    color: white;
+}
+
+#name{
+    font-size: 24px;
+    margin-top: -50px;
+}
+
+h4{
+    margin-top: 15px;
+}
+
+.nav{
+    box-shadow: 0 4px 5px #5b5b5b5b;
+    height: 75px;
+    font-size: 18px;
+}
+
+.nav h4{
+    height: 100%;
+    margin-top: 0px
+}
+
+.nav h4:hover{
+    border-bottom: white 5px solid;
+}
+
+.poll a{
+    font-size: 40px; 
+    color: black;
+}
+
+.modal button{
+    border:none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.modal button:active{
+    box-shadow: 0 5px 5px #5b5b5b5b;
+}
+
+.poll button{
+    border-radius: 0px;
+    color: black;
+    background-color: transparent;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border: none;
+    /* border-bottom: solid 5px var(--accentColorOne); */
+}
+
+@keyframes btns{
+    from{
+        border-bottom: none;
+    }
+
+    to{
+       border-bottom: 5px solid var(--accentColorOne);
+    }
+}
+
+.poll button:hover{
+    cursor: pointer;
+    animation: btns .5s ease-in;
+    border-bottom: 5px solid var(--accentColorOne);
+}
+
+.poll{
+    padding: 10px;
+}
+
+.btns{
+    margin-top: 50px;
+}
+
+.modal{
+    background-color: var(--accentColorOne);
+    color: white;
+}
+
+.btns a{
+    background-color: var(--accentColorOne);
+    color: white;
+    font-size: 28px;
+    height: 50px;
+}
+
+.nav button{
+    background-color: transparent;
+    color: white;
+    border: none;
+}
+
+.nav button:hover{
+    border-bottom: white 5px solid;
+    transition-duration: .2s;
+}
