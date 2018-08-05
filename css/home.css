@@ -56,6 +56,10 @@ a{
     #logout{
         margin-bottom: 50px;
     }
+
+    h3{
+        text-align: center;
+    }
 }
 
 label{
