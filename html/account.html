@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Vote!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/account.css">
+
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <!-- <script src="../js/home.js"></script> -->
+    <script src="../js/account.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="row nav">
+            <h4 class="col s12 m1 center-align" style="padding-top: 15px"><a href="home.html">Vote!</a></h4>
+            <h4 class="col s12 m2 offset-m7 center-align truncate" style="padding-top: 15px;"><a id="name" href="../html/account.html"> Smith</a></h4>
+            <button id="logout" class="col s12 m2">Logoout</button>
+        </div>
+        <div class="row info">
+            <div class="col m1">
+                <img src="../photos/user-placeholder.png" id="photo" class="col s4 m12 circle">
+                <button id="change" class="col hide-on-small-only m12">Change</button>
+            </div>
+            <div class="col m11">
+                <input type="text" id="fname" placeholder="First Name" class="col m5">
+                <input type="text" id="lname" placeholder="Last Name" class="col m5 offset-m1">
+                <input type="text" id="username" placeholder="Username" class="col m5">
+                <input type="email" id="email" placeholder="Email" class="col m5 offset-m1">
+                <input type="password" id="pass" placeholder="Password" class="col m11">
+                <label for="photo" class="col s12 m2">Upload new Portfolio Picture</label>
+                <input type="file" id="newPhoto" class="col s12 m10">
+            </div>
+            <br>
+            <button id="change" class="col hide-on-med-and-up s3">Change</button>
+        </div>
+        <div class="modal" id="updateModal">
+            <div class="modal-content">
+                <h3>Data Updated Successfully!</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

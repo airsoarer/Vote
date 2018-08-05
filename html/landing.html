@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vote!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="../css/landing.css">
+
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script src="../js/landing.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="row nav">
+            <button class="col m2 offset-m8" id="loginNav">Login</button>
+            <button class="col m2" id="signUpNav">Sign Up</button>
+        </div>
+        <div class="middle">
+            <div class="col s12 m12 vote">
+                <h1 class="center-align">Vote!</h1>
+            </div>
+            <div class="row btns">
+                <button data-target="voteModal" class="col s12 m3 offset-m3" id="vote">Vote</button>
+                <button class="col s12 m3" id="polls">Public Polls</button>
+            </div>
+            <!-- Vote Modal -->
+            <div class="modal" id="voteModal">
+                <div class="modal-content">
+                    <label for="code">Enter Vote Code: </label>
+                    <input type="text" id="code">
+                    <br>
+                    <br>
+                    <button id="enterCode">Enter Code</button>
+                </div>
+            </div>
+            <!-- Login Modal -->
+            <div class="modal" id="loginModal">
+                <div class="modal-content">
+                    <h4>Login</h4>
+                    <br>
+                    <label for="email">Email: </label>
+                    <input type="email" id="email">
+                    <label for="pass">Password: </label>
+                    <input type="password" id="pass">
+                    <!-- <span><a href="reset.html">For get your password?</a></span> -->
+                    <br>
+                    <br>
+                    <button id="login">Login</button>
+                </div>
+            </div>
+            <!-- Sign Up Modal -->
+            <div class="modal" id="signUpModal">
+                <div class="modal-content">
+                    <h4>Sign Up</h4>
+                    <br>
+                    <label for="fname">First Name: </label>
+                    <input type="text" id="fname">
+                    <label for="lname">Last Name: </label>
+                    <input type="text" id="lname">
+                    <label for="username">Username: </label>
+                    <input type="text" id="username">
+                    <label for="semail">Email: </label>
+                    <input type="email" id="semail">
+                    <label for="spass">Password: </label>
+                    <input type="password" id="spass" placeholder="Password must be at least 8 characters">
+                    <label for="confirmPass">Confirm Password</label>
+                    <input type="password" id="confirmPass">
+                    <label for="photo" style="margin-right: 10px;">Profile Picture</label>
+                    <input type="file" id="photo">
+                    <br>
+                    <br>
+                    <button id="signUp">Sign Up</button>
+                </div>
+            </div>
+            <!-- Wrong Authentication Modal -->
+            <div class="modal" id="wrongAuth">
+                <div class="modal-content">
+                    <h2>Wrong Email or Password</h2>
+                </div>
+            </div>
+            <!-- No File Uploaded -->
+            <div class="modal" id="noFile">
+                <div class="modal-content">
+                    <h2>No File Uploaded</h2>
+                </div>
+            </div>
+            <!-- Email in Use -->
+            <div class="modal" id="inUse">
+                <div class="modal-content">
+                    <h3>This email or username is already in use</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
