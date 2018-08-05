@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Vote!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/results.css">
+
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script src="../js/results.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="nav" class="row nav">
+            <h4 class="col s12 m1 center-align" style="padding-top: 15px"><a href="home.html">Vot</a>e!</h4>
+            <h4 class="col s12 m2 offset-m7 center-align truncate" style="padding-top: 15px;"><a id="name" href="../html/account.html"> Smith</a></h4>
+            <button id="logout" class="col s12 m2">Logoout</button>
+            <!-- <img class="col s4 m1 circle" src="../photos/user-placeholder.png" id="photo"> -->
+        </div>
+        <div class="title">
+            <h3 id="title" class="center-align"></h3>
+            <h5 id="voteCode" class="center-align"></h5>
+            <h5 id="votes" class="center-align" style="margin-top: -20px;"></h5>
+        </div>
+        <div class="bars"></div>
+        <div class="row goHome" style="margin-top: 50px;">
+            <a id="vote" class="col s10 offset-s1 m2 offset-m5 center-align hide" href="../html/landing.html">Go back to Vote!</a>
+        </div>
+    </div>
+</body>
+</html>

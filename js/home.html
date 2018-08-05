@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vote!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="../css/landing.css"> -->
+    <link rel="stylesheet" href="../css/home.css">
+
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script src="../js/home.js"></script>
+</head>
+<body>
+    <div class="row noneLogged hide">
+        <h1 class="center-align">No one is logged In</h1>
+        <a class="col s10 offset-s1 m2 offset-m5 center-align" href="landing.html">Go Back to Vote!</a>
+    </div>
+    <div class="wrapper">
+        <div class="row nav">
+            <h4 class="col s12 m1 center-align" style="padding-top: 15px"><a href="home.html">Vot</a>e!</h4>
+            <h4 class="col s12 m2 offset-m7 center-align truncate" style="padding-top: 15px;"><a id="name" href="../html/account.html"> Smith</a></h4>
+            <button id="logout" class="col s12 m2">Logoout</button>
+            <!-- <img class="col s4 m1 circle" src="../photos/user-placeholder.png" id="photo"> -->
+        </div>
+        <div class="row btns">
+            <a href="public.html" class="col s12 m2 offset-m8 center-align">Public Polls</a>
+            <a href="#" data-target="pollModal" id="newPoll" class="col s12 m2 center-align">Make a New Poll</a>
+        </div>
+        <div class="modal" id="pollModal">
+            <div class="modal-content">
+                <h4>Make a New Poll</h4>
+                <label for="title">Title: </label>
+                <input type="text" id="title">
+                <div id="body">
+                    <div class="question">
+                        <div class="row">
+                            <label for="question" class="col m12">Question 1: </label>
+                            <input type="text" id="question" class="col m12">
+                        </div>
+                        <div class="row choices">
+                            <button id="addChoice1" class="col m1 offset-m1 addChoice"><i class="material-icons">add</i></button>
+                            <label for="choice1">Choice 1</label>
+                            <input type="text" class="col m10" id="choice1">
+                            <span class="col m10 offset-m2">Do not use '#', '.', '$', '/', '[', ']' in any choices</span>
+                            <!--  -->
+                            <label for="choice2" class="col m10 offset-m2">Choice 2</label>
+                            <input type="text" class="col m10 offset-m2" id="choice2">
+                        </div>
+                        <div id="div" class="row status">
+                            <label class="col m2 offset-m2">
+                                <input name="status" type="radio" id="public">
+                                <span class="span">Public</span>
+                            </label>
+                            <label>
+                                <input name="status" type="radio" id="private">
+                                <span class="span">Private</span>
+                            </label>
+                            <span id="forgot" class="hide" style="color: red;">Choose 'public' or 'private</span>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <button id="create">Create</button>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="updateModal">
+            <div class="modal-content">
+                <h3>Poll Created Successfully!</h3>
+            </div>
+        </div>
+        <div class="row">
+            <h3 class="col s12 m12">Ongoing Polls</h3>
+            <div class="col s12 m12 card ongoing">
+                <div class="noOngoing">
+                    <h3 class="center-align" style="color: black">You have no Ongoing Polls</h3>
+                </div>
+            </div>
+            <h3 class="col s12 m12">Ended Polls</h3>
+            <div class="col s12 m12 card ended">
+                <div class="noEnded">
+                    <h3 class="center-align" style="color: black;">You have no Ended Polls</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
