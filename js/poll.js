@@ -42,16 +42,24 @@
                 label.classList.add("m7");
                 label.classList.add("offset-m5");
 
+                // Span 
+                var span = document.createElement("span");
+                span.textContent = data.Choices[i];
+
+                if(data.Choices[i].indexOf(" ") >= 0){
+                    var id = data.Choices[i].split(" ");
+                    var idTxt = "";
+                    for(var i = 0; i < id.length; i++){
+                        idTxt += id[i] + "-"
+                    }
+                }
+
                 // Input
                 var input = document.createElement("input");
                 $(input).attr('name', 'choice');
                 $(input).attr('type', 'radio');
-                $(input).attr('id', data.Choices[i]);
+                $(input).attr('id', idTxt);
                 $(input).attr('class', 'choice')
-                
-                // Span 
-                var span = document.createElement("span");
-                span.textContent = data.Choices[i];
 
                 label.appendChild(input);
                 label.appendChild(span);
@@ -72,13 +80,30 @@
             obj.Votes = obj.Votes + 1;
 
             for(var i in data.Choices){
-                if($('#' + data.Choices[i]).prop('checked') === true){
-                    obj[data.Choices[i]] = obj[data.Choices[i]] + 1;
-                    console.log("working", obj);
+                // console.log(data.Choices[i]);
+                obj[data.Choices[i]] = obj[data.Choices[i]] + 1;
+                if(data.Choices[i].indexOf(" ") >= 0){
+                    var temp = data.Choices[i].split(" ");
+                    // console.log(temp.length);
+                    var idTxt = "";
+                    for(var i = 0; i < temp.length; i++){
+                        idTxt += temp[i] + "-"
+                        // console.log(idTxt);
+                    }
+                }
+
+                console.log(data.Choices[i]);
+
+                if($('#' + idTxt).prop('checked') === true){
+                    console.log(obj);
+                    // obj[data.Choices[i]] = obj[data.Choices[i]] + 1;
+                    // console.log("working", obj);
                     firebase.database().ref('Users/' + localStorage.getItem('uid') + '/Polls/' + id + '/Points').update(obj).then(function(){
                         location.replace("../html/results.html?key=" + id + "&code=" + code);
                         return;
                     });
+                }else{
+                    console.log("no");
                 }
             }
         })
